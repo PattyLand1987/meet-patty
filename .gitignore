@@ -1,0 +1,12 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Microsoft Excel / Financial Model backups
+*.xlsm
+*.xlsx
+*.csv
+!financial-models/.gitkeep
+
+# Sensitive personal documentation (Tax returns, bank statements, credit reports)
+assets/documents/private_*.pdf
