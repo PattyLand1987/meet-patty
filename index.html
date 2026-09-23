@@ -59,6 +59,27 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);f
 .md{font-size:11px;margin-top:3px;}
 .up{color:var(--sage);} .dn{color:var(--coral);}
 
+
+/* TODAY WORKOUT LAYOUT */
+.wo-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:start;}
+@media(max-width:720px){.wo-layout{grid-template-columns:1fr;}}
+.wo-phase{margin-bottom:1.1rem;}
+.wo-phase:last-child{margin-bottom:0;}
+.wo-phase-h{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;margin-bottom:.45rem;flex-wrap:wrap;}
+.wo-phase-title{font-size:14px;font-weight:600;color:var(--ink);}
+.wo-phase-meta{font-size:11px;font-weight:500;letter-spacing:.4px;text-transform:uppercase;color:var(--ink-f);}
+.wo-list{list-style:none;padding:0;margin:0;}
+.wo-list li{display:flex;gap:.55rem;align-items:flex-start;padding:.38rem 0;border-bottom:1px solid var(--border);font-size:14px;line-height:1.45;}
+.wo-list li:last-child{border-bottom:none;}
+.wo-rep{font-weight:600;color:var(--mag);min-width:1.6rem;flex-shrink:0;}
+.wo-rest{background:var(--cream);border-radius:var(--r);padding:.55rem .85rem;font-size:13px;color:var(--ink-m);margin:.85rem 0;text-align:center;letter-spacing:.2px;}
+.wo-cap{display:inline-flex;align-items:center;gap:.4rem;font-size:12px;font-weight:500;padding:4px 10px;border-radius:16px;background:var(--sage-l);color:var(--sage);margin-bottom:1rem;}
+.insight-item{padding:.75rem 0;border-bottom:1px solid var(--border);}
+.insight-item:last-child{border-bottom:none;padding-bottom:0;}
+.insight-item:first-child{padding-top:0;}
+.insight-kicker{font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:var(--mauve);margin-bottom:.2rem;}
+.insight-title{font-size:14px;font-weight:500;margin-bottom:.2rem;color:var(--ink);}
+.insight-body{font-size:13px;color:var(--ink-m);line-height:1.55;}
 /* TODAY COMBINED CARD */
 .today-card{background:var(--white);border-radius:var(--rl);border:1px solid var(--border);margin-bottom:.9rem;overflow:hidden;}
 .today-header{background:#8A7F74;padding:1.2rem 1.4rem;position:relative;overflow:hidden;}
@@ -246,36 +267,89 @@ function checkPw(){
 
 <!-- TODAY -->
 <div class="page" id="page-today">
-  <div class="today-card">
-    <div class="today-header">
-      <div class="today-date-line" id="todayDateLine"></div>
-      <div class="today-sub" id="heroSub"></div>
-      <div class="pills" id="heroPills"></div>
-    </div>
-    <div class="today-sched" id="schedSection">
-      <div class="today-sched-title">Today's schedule</div>
-      <div id="schedEvents"></div>
-    </div>
-  </div>
+  <div class="pt">Today</div>
+  <div class="ps2" id="todayDateLine">Training day</div>
+  <div class="wo-cap">40-minute time cap · 3 phases</div>
 
-  <div class="comp" id="compBanner">
-    <div>
-      <div class="cn">Cinco de Mayo Throwdown — May 2nd</div>
-      <div class="cs">Scaled Division · 3-woman team with your Functional Health partners</div>
-      <div id="compFocus" style="margin-top:.6rem;font-size:12px;color:rgba(255,255,255,0.85);line-height:1.6;"></div>
-    </div>
-    <div class="cdb" id="cdBoxes"></div>
-  </div>
+  <div class="wo-layout">
+    <div class="card">
+      <div class="clabel">Today's workout</div>
 
-  <div class="g2">
-    <div class="card"><div class="clabel">Training today</div><div id="trainCard"></div></div>
-    <div class="card"><div class="clabel">Nutrition today</div><div id="nutriTodayContent"></div></div>
-  </div>
-  <div class="g2">
-    <div class="card"><div class="clabel">Recovery today</div><div id="recovToday"></div></div>
-    <div class="card"><div class="clabel">Science corner</div><div id="sciToday"></div></div>
-  </div>
-  </div></div>
+      <div class="wo-phase">
+        <div class="wo-phase-h">
+          <div class="wo-phase-title">Phase 1</div>
+          <div class="wo-phase-meta">3 rounds</div>
+        </div>
+        <ul class="wo-list">
+          <li><span class="wo-rep">5</span><span>Calories on the Echo bike</span></li>
+          <li><span class="wo-rep">10</span><span>Russian kettlebell swings <span style="color:var(--ink-f);">(70 lb)</span></span></li>
+          <li><span class="wo-rep">10</span><span>Pull-ups</span></li>
+          <li><span class="wo-rep">5</span><span>Kettlebell goblet squats <span style="color:var(--ink-f);">(53 lb)</span></span></li>
+        </ul>
+      </div>
+
+      <div class="wo-rest">Rest 3 minutes</div>
+
+      <div class="wo-phase">
+        <div class="wo-phase-h">
+          <div class="wo-phase-title">Phase 2</div>
+          <div class="wo-phase-meta">15 · 12 · 9</div>
+        </div>
+        <ul class="wo-list">
+          <li><span class="wo-rep">↔</span><span>Barbell snatch <span style="color:var(--ink-f);">(55 lb)</span></span></li>
+          <li><span class="wo-rep">↔</span><span>Toes-to-bar</span></li>
+        </ul>
+      </div>
+
+      <div class="wo-rest">Rest 3 minutes</div>
+
+      <div class="wo-phase">
+        <div class="wo-phase-h">
+          <div class="wo-phase-title">Phase 3</div>
+          <div class="wo-phase-meta">Once through</div>
+        </div>
+        <ul class="wo-list">
+          <li><span class="wo-rep">20</span><span>Calories on the Echo bike</span></li>
+          <li><span class="wo-rep">15</span><span>Barbell overhead squats <span style="color:var(--ink-f);">(85 lb)</span></span></li>
+          <li><span class="wo-rep">10</span><span>Burpee box get-overs</span></li>
+          <li><span class="wo-rep">5</span><span>Strict handstand push-ups</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="clabel">Why these movements matter</div>
+
+      <div class="insight-item">
+        <div class="insight-kicker">Phase 1 · Mixed modal primer</div>
+        <div class="insight-title">Bike + swings + pull-ups + goblet squats</div>
+        <div class="insight-body">Short Echo efforts spike heart rate without loading the spine. Russian KB swings train powerful hip extension and posterior-chain endurance. Pull-ups build relative upper-body strength and grip. Goblet squats groove upright squatting under a front load — useful prep for later overhead work.</div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-kicker">Echo bike</div>
+        <div class="insight-title">Low-impact conditioning with high payoff</div>
+        <div class="insight-body">Fan bikes demand both upper and lower body, raising metabolic demand quickly while staying joint-friendly. Ideal for women stacking hard sessions who need cardio stimulus without extra running impact.</div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-kicker">Phase 2 · Olympic + gymnastics couplet</div>
+        <div class="insight-title">Snatch + toes-to-bar under descending reps</div>
+        <div class="insight-body">The 15-12-9 ladder builds power-endurance: light snatches train full-body coordination, timing, and overhead mobility; toes-to-bar challenge midline strength and hip flexion under fatigue. Descending reps keep quality high as heart rate climbs.</div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-kicker">Phase 3 · Strength-skill finisher</div>
+        <div class="insight-title">Overhead squat, burpee get-overs, strict HSPU</div>
+        <div class="insight-body">Overhead squats demand mobility, stability, and trunk control — a gold-standard pattern for shoulder and core resilience. Burpee box get-overs add total-body grit and soft-tissue resilience. Strict handstand push-ups build genuine pressing strength without kipping momentum — valuable for shoulder health and upper-body bone loading.</div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-kicker">Session design</div>
+        <div class="insight-title">Why the rests and time cap help</div>
+        <div class="insight-body">Built-in 3-minute rests protect movement quality between phases, so the session trains skill and capacity — not just survival. A 40-minute cap encourages sustainable pacing, a key habit for long-term adherence and injury reduction in mixed-modal training.</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -522,83 +596,10 @@ function initToday(){
   const now=new Date();
   const days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
   const months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const label=days[now.getDay()]+", "+months[now.getMonth()]+" "+now.getDate()+" · Today's workout";
   document.getElementById("hdrDate").textContent=days[now.getDay()]+", "+months[now.getMonth()]+" "+now.getDate();
-  const h=now.getHours(),dow=now.getDay();
-  const diff=daysTo("2026-05-02");
-  document.getElementById("todayDateLine").textContent=days[now.getDay()]+", "+months[now.getMonth()]+" "+now.getDate()+" · "+( dow===0?"Rest day":dow===6?"Skill session day":"Training day");
-
-  let sub="",pills=[];
-  if(dow===0){sub="Rest day — sleep in, church, chores, and meal prep. Your nervous system thanks you.";pills=[{t:"Rest day",c:"pg"},{t:"Yoga or handstands at home",c:"pma"},{t:"Meal prep window",c:"ps3"}];}
-  else if(dow===6){sub="Coffee + gym at 10am. Skill work and active recovery day.";pills=[{t:"10am skill session",c:"ps3"},{t:"Snatch & gymnastics",c:"pm2"},{t:"Saturday recovery",c:"pc"}];}
-  else{sub=diff>0?"5am HIIT day. Competition is "+diff+" days away — pace, breathe, execute.":"Comp day — trust your training. Breathe and pace.";
-    pills=[{t:"5am HIIT",c:"ps3"},{t:"High protein day",c:"pm2"}];
-    if(dow===2)pills.push({t:"Gymnastics tonight 🤸",c:"pc"});
-    if(dow===4)pills.push({t:"Girl Scouts tonight 🍪",c:"pc"});
-    if(dow===5)pills.push({t:"Dr. Torres today 🏥",c:"pma"});
-  }
-  document.getElementById("heroSub").textContent=sub;
-  document.getElementById("heroPills").innerHTML=pills.map(p=>"<span class='pill "+p.c+"'>" +p.t+"</span>").join("");
-
-  if(diff>0){
-    document.getElementById("cdBoxes").innerHTML="<div class='cdb-b'><div class='cdn'>"+diff+"</div><div class='cdl'>days</div></div>";
-    const focusMap={
-      20:"This week: endurance pacing practice + snatch balance form.",
-      19:"This week: endurance pacing practice + snatch balance form.",
-      18:"This week: practice bike-to-snatch transitions at comp pace.",
-      17:"This week: practice bike-to-snatch transitions at comp pace.",
-      16:"This week: wall ball and pull-up volume — Workout 3 prep.",
-      15:"This week: wall ball and pull-up volume — Workout 3 prep.",
-      14:"Two weeks out: dial in 1RM squat and deadlift assignments.",
-      13:"Two weeks out: dial in 1RM squat and deadlift assignments.",
-      12:"Two weeks out: review Workout 2 sandbag rotation strategy with teammates.",
-      11:"Start tapering volume. Keep intensity, reduce total reps.",
-      10:"Taper week begins. Sleep, protein, and recovery are training now.",
-      9:"Taper: practice full Workout 3 sequence at 70% effort.",
-      8:"Taper: nail sandbag bear-hug transitions with teammates.",
-      7:"One week out — no new skills. Sharpen what you have.",
-      6:"6 days: light skill work only. Bench assignment confirmed?",
-      5:"5 days: rest or very light movement. Legs fresh.",
-      4:"4 days: short activation workout. No fatigue.",
-      3:"3 days: rest. Epsom bath, home sauna, early sleep.",
-      2:"2 days: 15 min light movement. Visualize each workout.",
-      1:"Tomorrow is competition day. Rest, eat well, sleep early.",
-    };
-    const focus=focusMap[diff]||"Keep training smart and recovering well.";
-    document.getElementById("compFocus").textContent="Focus: "+focus;
-  }
-  else{document.getElementById("compBanner").style.display="none";}
-
-  const dk=now.toISOString().slice(0,10);
-  const evs=CAL[dk]||[];
-  const se=document.getElementById("schedEvents");
-  const ss=document.getElementById("schedSection");
-  if(!evs.length){
-    ss.style.display="none";
-  } else {
-    const dotMap={w:"dw",f:"df",k:"dk",h:"dh"};
-    se.innerHTML=evs.map(e=>"<div class='sev'><span class='st'>"+e.t+"</span><div class='sdot "+(dotMap[e.k]||"dk")+"'></div><span style='font-size:13px;'>"+e.l+"</span></div>").join("");
-  }
-
-  const tc=document.getElementById("trainCard");
-  if(dow===0){tc.innerHTML="<div class='rec'><div class='ri rg'>🧘</div><div><div class='rtl'>Rest day</div><div class='rbd'>No gym today. Yoga or handstand practice at home is perfect — parasympathetic, not sympathetic.</div></div></div>";}
-  else if(dow===6){tc.innerHTML="<div class='rec'><div class='ri rs'>🏋️</div><div><div class='rtl'>10am skill session</div><div class='rbd'>Snatch balance, kipping pull-up strings, or handstand work. Quality over intensity today.</div></div></div><div class='rec'><div class='ri rt'>🫀</div><div><div class='rtl'>Keep HR moderate</div><div class='rbd'>Skill acquisition, not conditioning. No need to gas yourself on Saturdays.</div></div></div>";}
-  else{tc.innerHTML="<div class='rec'><div class='ri rs'>🏋️</div><div><div class='rtl'>5am Group HIIT</div><div class='rbd'>Focus on pacing — nasal breathing during warm-up trains HR management. Snatch balance practice before the WOD if time allows.</div></div></div><div class='rec'><div class='ri rt'>🫀</div><div><div class='rtl'>Endurance protocol</div><div class='rbd'>"+(diff>0?"Competition is "+diff+" days out. When HR spikes, back off 10% and recover before pushing again.":"Competition day — trust your training. Breathe, pace, and execute.")+"</div></div></div>";}
-
-  const rd=document.getElementById("recovToday");
-  const recMap={1:"<div class='rec'><div class='ri rt'>❄️</div><div><div class='rtl'>Good day for Evolve contrast therapy</div><div class='rbd'>Within 48 hrs of hard effort — contrast therapy accelerates recovery and reduces DOMS.</div></div></div>",3:"<div class='rec'><div class='ri rt'>❄️</div><div><div class='rtl'>Mid-week Evolve visit</div><div class='rbd'>Compression sleeves or contrast therapy keeps you recovering well for the back half of the week.</div></div></div>",5:"<div class='rec'><div class='ri rs'>🪵</div><div><div class='rtl'>Home sauna tonight</div><div class='rbd'>20 min, 3–4 hours before bed. End-of-week signal to your nervous system.</div></div></div>",0:"<div class='rec'><div class='ri rg'>🛁</div><div><div class='rtl'>Epsom salt bath — optional</div><div class='rbd'>If carrying soreness from the week, a 20-min soak sets you up for the Monday 5am restart.</div></div></div>",6:"<div class='rec'><div class='ri rs'>🔫</div><div><div class='rtl'>Post-session Theragun</div><div class='rbd'>After today's skill session, 60 seconds on areas you worked. Consider Evolve this afternoon.</div></div></div>"};
-  rd.innerHTML=recMap[dow]||"<div class='rec'><div class='ri rs'>🔫</div><div><div class='rtl'>Theragun this evening</div><div class='rbd'>60–90 seconds on whatever's sore from this morning.</div></div></div>";
-
-  const insights=[
-    {b:"Strength & Longevity",t:"Lifting protects muscle and bone",d:"Resistance training is one of the best ways women preserve lean mass and bone density — especially through midlife. Cardio alone does not deliver the same skeletal benefits."},
-    {b:"Cycle-Aware Training",t:"Phase changes how hard work feels",d:"Higher estrogen weeks often support strength and recovery; late luteal weeks can raise perceived effort. Tracking cycle + load turns hard weeks into smarter programming."},
-    {b:"Protein & Muscle",t:"Spread protein across the day",d:"Active women often under-eat protein. Aim for a solid dose at each meal — especially after lifting — to support muscle repair and adaptation."},
-    {b:"Iron & Energy",t:"Fatigue is often iron + fueling",d:"Menstrual blood loss and hard training raise iron needs. Low stores blunt oxygen delivery and progress long before full anemia shows up."},
-    {b:"Energy Availability",t:"Under-fueling has a hormonal cost",d:"Chronically low calories relative to training can disrupt cycles, sleep, immunity, and strength gains. Consistency needs enough fuel, not just enough grit."},
-    {b:"Recovery Science",t:"Contrast therapy is a lymphatic pump",d:"The lymphatic system has no heart — it relies on thermal changes to move. Heat↔cold transitions help flush waste and support recovery between hard sessions."},
-    {b:"Community & Adherence",t:"Group training builds consistency",d:"Training with others boosts endorphins, accountability, and long-term adherence — especially valuable when schedules are packed."},
-  ];
-  const ins=insights[now.getDate()%insights.length];
-  document.getElementById("sciToday").innerHTML="<div style='background:var(--mauve-l);border-radius:var(--r);padding:.8rem;border:1px solid var(--mauve-m);'><div style='font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:var(--mauve);margin-bottom:.35rem;'>"+ins.b+"</div><div style='font-size:14px;font-weight:500;margin-bottom:.25rem;'>"+ins.t+"</div><div style='font-size:12px;color:var(--ink-m);line-height:1.6;'>"+ins.d+"</div></div>";
+  const el=document.getElementById("todayDateLine");
+  if(el) el.textContent=label;
 }
 
 function initBodyCharts(){
@@ -673,7 +674,6 @@ function initNutriToday(){
 
 document.addEventListener("DOMContentLoaded",()=>{
   initToday();
-  initNutriToday();
   initBodyCharts();
   initBench();
   initEvolve();
