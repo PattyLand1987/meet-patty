@@ -634,27 +634,6 @@ function addBench(){
   document.getElementById("bRes").value="";
 }
 
-  const sc=arr=>ST.selSymp.filter(x=>arr.includes(x)).length;
-  const pms=sc(["Mood swings","Bloating","Chocolate cravings","Irritability","Tender breasts","Anxiety spike","Low motivation"]);
-  const foll=sc(["High energy","Sharp focus","Feeling strong"]);
-  const lut=sc(["Fatigue","Sleep trouble","Very hungry","Chocolate cravings","Joint aches"]);
-  const ov=sc(["High energy","Feeling strong","Low appetite"]);
-  const ph=pms>=2?"pms":ov>=2&&ST.selSymp.includes("Feeling strong")?"ov":foll>=2?"foll":lut>=2?"lut":"lut";
-  const info={
-    foll:{n:"Follicular",e:"🌱",bg:"var(--mauve-l)",b:"var(--mauve-m)",tr:"Push intensity and attempt PRs. Pain tolerance is higher, recovery faster. Good week for snatch balance and kipping pull-up strings.",nu:"Iron-rich foods (beef, sardines). Lighter, varied carbs. Still hit protein targets."},
-    ov:{n:"Ovulatory",e:"🌸",bg:"var(--sage-l)",b:"var(--sage-m)",tr:"Your physical peak. Best for 1RM attempts, max WODs, and competitions.",nu:"Anti-inflammatory foods manage joint laxity (salmon, sardines, avocado). High protein to capture peak muscle gains."},
-    lut:{n:"Luteal",e:"🍂",bg:"var(--mag-l)",b:"var(--mag-m)",tr:"Reduce max intensity. Form work and steady-state cardio. Slower times are physiological.",nu:"Increase complex carbs (sweet potatoes, beans, oats). Magnesium-rich foods. Chocolate craving starts here — plan your Clio bar."},
-    pms:{n:"Late Luteal / PMS",e:"🌊",bg:"var(--coral-l)",b:"var(--coral-m)",tr:"Lower intensity. Yoga, mobility, handstands at home. Rest IS training.",nu:"Most important anti-inflammatory week. Limit gluten and dairy now. Keep chocolate stash ready."},
-  };
-  const inf=info[ph];
-  document.getElementById("phaseResult").innerHTML="<div style='background:"+inf.bg+";border-radius:var(--r);padding:.85rem;border:1px solid "+inf.b+";'><div style='font-size:22px;margin-bottom:.35rem;'>"+inf.e+"</div><div style='font-size:16px;font-weight:500;margin-bottom:2px;'>"+inf.n+" phase — likely</div><div style='font-size:13px;color:var(--ink-m);'>Based on "+ST.selSymp.length+" symptoms. Pattern builds with continued tracking.</div></div>";
-  document.getElementById("cycleTrainDiv").innerHTML="<div style='font-size:13px;color:var(--ink-m);line-height:1.7;'>"+inf.tr+"</div>";
-  document.getElementById("cycleNutriDiv").innerHTML="<div style='font-size:13px;color:var(--ink-m);line-height:1.7;'>"+inf.nu+"</div>";
-  document.getElementById("phaseGuide").style.display="block";
-  ST.sympLogs.unshift({d:new Date().toLocaleDateString(),s:[...ST.selSymp],ph:inf.n});
-  ST.currentPhase=ph;
-  document.getElementById("sympHistory").innerHTML=ST.sympLogs.map(l=>"<div style='padding:.6rem 0;border-bottom:1px solid var(--border);'><div style='display:flex;justify-content:space-between;margin-bottom:2px;'><span style='font-size:14px;font-weight:500;'>"+l.d+"</span><span style='font-size:11px;padding:2px 8px;border-radius:8px;background:var(--mag-l);color:var(--mag);'>"+l.ph+"</span></div><div style='font-size:12px;color:var(--ink-m);'>"+l.s.join(" · ")+"</div></div>").join("");
-}
 
 function initEvolve(){renderEvolve();}
 function renderEvolve(){
@@ -663,40 +642,6 @@ function renderEvolve(){
 }
 function logEvolve(){if(ST.evolve>=4){alert("All 4 visits used this month!");return;}ST.evolve++;lsSet("evolve",ST.evolve);renderEvolve();}
 
-
-  const cycleInfo={
-    foll:{e:"🌱",n:"Follicular",color:"var(--mauve-l)",border:"var(--mauve-m)",
-      train:"Good week to push intensity and try new PRs. Pain tolerance is higher — work on snatch balance and kipping pull-ups.",
-      nutri:"Iron-rich foods (beef, sardines). Protein targets still key. Lower appetite is normal.",
-      mood:"Estrogen is rising — ADHD may feel more manageable. Good week for planning and new challenges."},
-    ov:{e:"🌸",n:"Ovulatory",color:"var(--sage-l)",border:"var(--sage-m)",
-      train:"Your performance peak. Best for max effort WODs and 1RM attempts. Compete if you can.",
-      nutri:"Anti-inflammatory focus — salmon, sardines, avocado. High protein to capture peak muscle gains.",
-      mood:"Peak confidence and social energy. Channel it — this is your strongest week all month."},
-    lut:{e:"🍂",n:"Luteal",color:"var(--mag-l)",border:"var(--mag-m)",
-      train:"Reduce max intensity. Form work, steady-state cardio. Slower times are physiological.",
-      nutri:"Increase complex carbs (sweet potatoes, beans). Magnesium-rich foods. Chocolate craving is real — plan your Clio bar.",
-      mood:"Progesterone rising — you may feel more tired. Prioritize sleep. Good week for home sauna before bed."},
-    pms:{e:"🌊",n:"Late Luteal / PMS",color:"var(--coral-l)",border:"var(--coral-m)",
-      train:"Lower intensity. Yoga, mobility, handstands at home. Rest IS training this week.",
-      nutri:"Most important anti-inflammatory week. Limit gluten and dairy. Keep chocolate stash ready.",
-      mood:"ADHD symptoms are physiologically worse as dopamine drops. Increase structure. Don't judge the harder days."},
-  };
-  const inf=cycleInfo[ph];
-  if(!inf){return;}
-  const el=document.getElementById("cycleAwarenessContent");
-  if(!el){return;}
-  el.innerHTML=
-    "<div style='background:"+inf.color+";border-radius:var(--r);padding:.85rem;border:1px solid "+inf.border+";margin-bottom:.75rem;'>"+
-      "<div style='display:flex;align-items:center;gap:.5rem;margin-bottom:.35rem;'>"+
-        "<span style='font-size:18px;'>"+inf.e+"</span>"+
-        "<span style='font-size:14px;font-weight:500;'>"+inf.n+" phase — last logged</span>"+
-      "</div>"+
-    "</div>"+
-    "<div class='rec'><div class='ri rs'>🏋️</div><div><div class='rtl'>Training today</div><div class='rbd'>"+inf.train+"</div></div></div>"+
-    "<div class='rec'><div class='ri rg'>🥗</div><div><div class='rtl'>Nutrition today</div><div class='rbd'>"+inf.nutri+"</div></div></div>"+
-    "<div class='rec'><div class='ri rb'>🧠</div><div><div class='rtl'>Mood & energy</div><div class='rbd'>"+inf.mood+"</div></div></div>";
-}
 
 function initNutriToday(){
   const dow=new Date().getDay();
