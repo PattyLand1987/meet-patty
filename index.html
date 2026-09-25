@@ -258,14 +258,13 @@ input:focus,select:focus{border-color:var(--sage);}
   </div>
 </div>
 <script>
-const PUBLIC_PAGES=['events','science','today','body','bench','nutri','recovery'];
-const LOCKED_PAGES=[];
-var isAuthed=localStorage.getItem('mp_auth')==='ok';
+const LOCKED_PAGES=['body','bench'];
+// Keep access unlocked only for this page load; ask again on a fresh visit.
+var isAuthed=false;
 
 function checkPw(){
   const v=document.getElementById('pwInput').value;
-  if(v==='TacoBelles'){
-    localStorage.setItem('mp_auth','ok');
+  if(v==='3081'){
     isAuthed=true;
     document.getElementById('pwOverlay').style.display='none';
     // navigate to the tab they tried to click
