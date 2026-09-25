@@ -78,6 +78,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);f
 .insight-item:last-child{border-bottom:none;padding-bottom:0;}
 .insight-item:first-child{padding-top:0;}
 .insight-kicker{font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:var(--mauve);margin-bottom:.2rem;}
+.insight-source{font-size:11px;margin-top:.4rem;}
+.insight-source a{color:var(--sage);}
 .insight-title{font-size:14px;font-weight:500;margin-bottom:.2rem;color:var(--ink);}
 .insight-body{font-size:13px;color:var(--ink-m);line-height:1.55;}
 /* WORKOUT BUILDER */
@@ -479,68 +481,42 @@ function checkPw(){
 <!-- NUTRITION -->
 <div class="page" id="page-nutri">
   <div class="pt">Nutrition</div>
-  <div class="ps2">Whole-food, high-protein, gluten-aware — built around your real life</div>
-  <div class="itabs">
-    <button class="itab active" onclick="showIT('nutri','week',this)">This week</button>
-    <button class="itab" onclick="showIT('nutri','prep',this)">Weekend prep</button>
-    <button class="itab" onclick="showIT('nutri','prin',this)">Principles</button>
-  </div>
-  <div class="ipanel active" id="nutri-week">
-    <div style="font-size:13px;color:var(--ink-m);margin-bottom:.8rem;">30-min dinners for a family of 4. Cilantro-free. No fennel/anise.</div>
-    <div class="dh2">Monday</div>
-    <div class="mc"><div class="mh"><span class="mtp">Dinner</span><div class="mac"><span class="mb2 mbp">P: 38g</span><span class="mb2 mbc">C: 40g</span></div></div><div class="mn">Cast Iron Salmon + Roasted Potatoes + Kale Chips</div><div class="md2">Season salmon with garlic, lemon, smoked paprika. Cast iron skin-down, then 400°F for 8 min. Roast baby potatoes and kale chips alongside.</div><span class="mtg tgf">✓ Gluten-free</span><span class="mtg tft">⏱ 25 min</span></div>
-    <div class="dh2">Tuesday · Gymnastics night</div>
-    <div class="mc"><div class="mh"><span class="mtp">Quick dinner</span><div class="mac"><span class="mb2 mbp">P: 40g</span></div></div><div class="mn">Rotisserie Chicken + Avocado + Frozen Veg</div><div class="md2">Pick up rotisserie chicken — eat fresh tonight only. Pair with frozen corn/peas and avocado. Zero cooking on a busy night.</div><span class="mtg tfm">Family easy</span><span class="mtg tft">⏱ 5 min</span></div>
-    <div class="dh2">Wednesday</div>
-    <div class="mc"><div class="mh"><span class="mtp">Dinner</span><div class="mac"><span class="mb2 mbp">P: 42g</span><span class="mb2 mbc">C: 38g</span></div></div><div class="mn">Protein Pasta Bolognese + White Beans</div><div class="md2">Brown ground beef with onion and garlic, canned tomatoes, Italian seasoning (no fennel). Stir in white beans. Toss with chickpea or lentil pasta. Parmesan on top.</div><span class="mtg tfm">Family favorite</span><span class="mtg tft">⏱ 30 min</span></div>
-    <div class="dh2">Thursday · Girl Scouts night</div>
-    <div class="mc"><div class="mh"><span class="mtp">Fast dinner</span><div class="mac"><span class="mb2 mbp">P: 35g</span></div></div><div class="mn">Beef Tacos — yours spicy, family's mild</div><div class="md2">Ground beef with cumin, garlic, smoked paprika. Corn tortillas, black beans, avocado, cheese. Set aside chili oil + hot honey for yours. No cilantro.</div><span class="mtg tgf">✓ GF corn tortillas</span><span class="mtg tft">⏱ 20 min</span></div>
-    <div class="dh2">Friday</div>
-    <div class="mc"><div class="mh"><span class="mtp">Dinner</span><div class="mac"><span class="mb2 mbp">P: 28g</span><span class="mb2 mbc">C: 52g</span></div></div><div class="mn">Ramen with Thai Peanut Tofu</div><div class="md2">Sauce: peanut butter + soy + chili oil + lime + garlic + ginger + honey. Pan-fry pressed tofu. Ramen noodles + sauce + tofu + soft-boiled egg + frozen edamame.</div><span class="mtg tnw">🧪 Your experiment</span><span class="mtg tft">⏱ 25 min</span></div>
-    <div class="dh2">Weekend · Double batch day</div>
-    <div class="mc"><div class="mh"><span class="mtp">Batch cook</span><div class="mac"><span class="mb2 mbp">P: 35g</span></div></div><div class="mn">Sausage, Potato & Kale Soup — double batch</div><div class="md2">Make a double batch after Saturday gym. Eat one night, freeze the rest in single-serve portions. Best kale-delivery vehicle that isn't a salad.</div><span class="mtg" style="background:var(--sage-l);color:var(--sage);">🥬 Greens without salad</span><span class="mtg tfm">Freezer-friendly</span></div>
-  </div>
-  <div class="ipanel" id="nutri-prep">
-    <div style="font-size:13px;color:var(--ink-m);margin-bottom:.9rem;">Saturday post-gym is your best brain window. One task per session.</div>
-    <div class="card"><div class="clabel">Saturday — after 10am gym</div>
-      <div class="rec"><div class="ri rt" style="font-size:13px;font-weight:600;color:var(--coral);">1</div><div><div class="rtl">Double-batch kale soup</div><div class="rbd">Make while doing something else. Freeze half. Best weekly prep ROI.</div></div></div>
-      <div class="rec"><div class="ri rg" style="font-size:13px;font-weight:600;color:var(--mauve);">2</div><div><div class="rtl">Hard-boil 6 eggs</div><div class="rbd">12 min unattended. Snacks, ramen toppers, hash bases all week.</div></div></div>
-      <div class="rec"><div class="ri rb" style="font-size:13px;font-weight:600;color:var(--mag);">3</div><div><div class="rtl">Make Thai peanut sauce jar</div><div class="rbd">5 min, stores a week. Enables fast satisfying lunches any day.</div></div></div>
-    </div>
-    <div class="card"><div class="clabel">Your reliable quick lunches</div>
-      <div style="padding:.6rem 0;border-bottom:1px solid var(--border);"><div class="mn" style="font-size:14px;">Sardine + cottage cheese bowl</div><div class="md2">Sardines + cottage cheese + chili oil + crackers. 2 min. ~30g protein.</div></div>
-      <div style="padding:.6rem 0;border-bottom:1px solid var(--border);"><div class="mn" style="font-size:14px;">Egg & potato hash bowl</div><div class="md2">Leftover potatoes + ground beef/turkey + fried egg + sauerkraut + hot honey + avocado. ~35g protein.</div></div>
-      <div style="padding:.6rem 0;"><div class="mn" style="font-size:14px;">Quick ramen + peanut sauce</div><div class="md2">Pre-made sauce from fridge + ramen noodles + pre-fried tofu. 10 min.</div></div>
-    </div>
-    <div class="card"><div class="clabel">Dessert rotation</div>
-      <div style="display:flex;flex-direction:column;gap:.45rem;">
-        <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);font-size:14px;"><span>Clio Greek yogurt bar</span><span style="font-size:12px;color:var(--ink-m);">Chocolate · ~10g protein</span></div>
-        <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);font-size:14px;"><span>Chocolate-covered pistachios</span><span style="font-size:12px;color:var(--ink-m);">Healthy fats + chocolate</span></div>
-        <div style="display:flex;justify-content:space-between;padding:.4rem 0;font-size:14px;"><span>Ninja Creami protein ice cream</span><span style="font-size:12px;color:var(--ink-m);">Cottage cheese base</span></div>
+  <div class="ps2">A flexible, food-first guide to fueling strength, energy, and long-term health through every life stage.</div>
+  <div class="wo-layout">
+    <div>
+      <div class="card">
+        <div class="clabel">High-protein foods</div>
+        <div class="insight-item"><div class="insight-kicker">Animal and dairy</div><div class="insight-body">Eggs · Greek yogurt · cottage cheese · milk or fortified soy drink · salmon · sardines · chicken · lean beef</div></div>
+        <div class="insight-item"><div class="insight-kicker">Plant-based</div><div class="insight-body">Tofu · tempeh · edamame · lentils · beans · chickpeas · seitan · nuts and seeds</div></div>
+        <div class="insight-item"><div class="insight-kicker">Easy combinations</div><div class="insight-body">Yogurt with oats and berries · eggs with beans and toast · tofu or chicken grain bowls · lentil soup with whole-grain bread</div></div>
+      </div>
+      <div class="card">
+        <div class="clabel">High-fiber foods</div>
+        <div class="insight-item"><div class="insight-kicker">Beans, lentils &amp; whole grains</div><div class="insight-body">Black beans · chickpeas · lentils · oats · barley · quinoa · brown rice · whole-grain breads and pasta</div></div>
+        <div class="insight-item"><div class="insight-kicker">Produce, nuts &amp; seeds</div><div class="insight-body">Raspberries · pears · apples · broccoli · leafy greens · peas · chia · flax · almonds</div></div>
+        <div class="insight-item"><div class="insight-kicker">Build gradually</div><div class="insight-body">Add one fiber-rich food at a time and drink to thirst; a sudden jump in fiber can feel uncomfortable.</div></div>
+      </div>
+      <div class="card">
+        <div class="clabel">Before and after training</div>
+        <div class="insight-item"><div class="insight-kicker">Before · familiar, easy-to-digest fuel</div><div class="insight-body">Banana · toast with jam · oatmeal · yogurt with fruit · cereal and milk. Choose a portion and timing that feels comfortable.</div></div>
+        <div class="insight-item"><div class="insight-kicker">After · carbs + protein</div><div class="insight-body">Rice bowl with tofu, chicken, or fish · yogurt, fruit, and oats · eggs with potatoes · bean and cheese tacos.</div></div>
+        <div class="insight-item"><div class="insight-kicker">Fluids</div><div class="insight-body">Water is a practical default. Longer, hotter, or sweatier sessions may call for extra fluid and electrolytes.</div></div>
+      </div>
+      <div class="card">
+        <div class="clabel">Meal-prep friendly staples</div>
+        <div class="insight-item"><div class="insight-kicker">Cook once, mix and match</div><div class="insight-body">Batch-cooked beans or lentils · boiled eggs · cooked grains · roasted vegetables · baked tofu or chicken · soups and stews</div></div>
+        <div class="insight-item"><div class="insight-kicker">Quick pantry and freezer helpers</div><div class="insight-body">Frozen vegetables and fruit · canned beans · canned salmon or sardines · oats · whole-grain wraps · nuts · plain yogurt</div></div>
+        <div class="insight-item"><div class="insight-kicker">Simple plate formula</div><div class="insight-body">Pair a protein food with vegetables or fruit, a satisfying grain or starchy vegetable, and a source of fat. Adjust portions to appetite and activity.</div></div>
       </div>
     </div>
-  </div>
-  <div class="ipanel" id="nutri-prin">
-    <div class="g2">
-      <div class="card"><div class="clabel">Your blueprint</div>
-        <div style="display:flex;flex-direction:column;gap:.6rem;font-size:13px;color:var(--ink-m);line-height:1.7;">
-          <div><strong style="color:var(--ink);">Whole food based</strong> — varied, colorful, mostly home-cooked. Not a rigid diet.</div>
-          <div><strong style="color:var(--ink);">High protein</strong> — aim 120–140g/day. Every meal needs a protein anchor.</div>
-          <div><strong style="color:var(--ink);">Gluten-aware, not obsessive</strong> — limit during high-training or high-stress weeks.</div>
-          <div><strong style="color:var(--ink);">Frequent meals</strong> — no long gaps. Supports blood sugar, ADHD focus, and thyroid health.</div>
-          <div><strong style="color:var(--ink);">Anti-inflammatory baseline</strong> — omega-3s daily, fermented foods, varied veg.</div>
-          <div><strong style="color:var(--ink);">Dairy watchpoint</strong> — may contribute to acne. Consider a 3-week reduced-dairy test.</div>
-        </div>
-      </div>
-      <div class="card"><div class="clabel">ADHD strategy</div>
-        <div style="display:flex;flex-direction:column;gap:.6rem;font-size:13px;color:var(--ink-m);line-height:1.7;">
-          <div><strong style="color:var(--ink);">Reduce decisions</strong> — rotate 4–5 reliable dinners. Novel meals only on good brain days.</div>
-          <div><strong style="color:var(--ink);">Hyperfixation is fine</strong> — sardine bowls, egg hash — embrace it while it's nutritious.</div>
-          <div><strong style="color:var(--ink);">Prep in clear windows</strong> — Saturday post-gym. One task per session.</div>
-          <div><strong style="color:var(--ink);">Pre-decided nights</strong> — Tuesday = rotisserie. Thursday = tacos. Already decided.</div>
-          <div><strong style="color:var(--ink);">Aversion periods</strong> — if a food stops appealing, swap anchors. Don't force it.</div>
-        </div>
-      </div>
+    <div class="card">
+      <div class="clabel">Nutrition insights</div>
+      <div class="insight-item"><div class="insight-kicker">Protein · support repair and strength</div><div class="insight-title">Include a protein source across the day</div><div class="insight-body">Protein foods provide amino acids used to build and repair tissues. Mix animal and plant sources that fit your preferences; personal needs vary with body size, activity, health, and life stage.</div></div>
+      <div class="insight-item"><div class="insight-kicker">Fiber · nourish gut and heart health</div><div class="insight-title">Choose a variety of plants</div><div class="insight-body">Beans, whole grains, fruit, vegetables, nuts, and seeds add fiber and a range of nutrients. Increase fiber gradually and pair it with enough fluids.</div></div>
+      <div class="insight-item"><div class="insight-kicker">Training fuel · energy and recovery</div><div class="insight-title">Carbohydrates belong in an active diet</div><div class="insight-body">Fruit, grains, potatoes, and other carbohydrate foods help fuel exercise. A convenient snack before training and a meal with carbohydrates and protein afterward can work well; there is no single narrow recovery window.</div></div>
+      <div class="insight-item"><div class="insight-kicker">Iron · a nutrient to keep in view</div><div class="insight-title">Needs can differ by age and life stage</div><div class="insight-body">Meat and seafood provide iron; beans, lentils, spinach, and fortified grains are plant sources. Vitamin C foods such as citrus, berries, peppers, and tomatoes help the body absorb iron from plant foods. Ask a clinician about testing or supplements if concerned.</div><div class="insight-source"><a href="https://ods.od.nih.gov/factsheets/iron-consumer/" target="_blank" rel="noopener">NIH Office of Dietary Supplements · Iron</a></div></div>
+      <div class="insight-item"><div class="insight-kicker">Bone health · calcium and vitamin D</div><div class="insight-title">Build a steady pattern over time</div><div class="insight-body">Dairy foods, calcium-fortified alternatives, canned fish with bones, and some greens can contribute calcium. Needs vary by age and life stage; a health professional can help assess individual needs.</div><div class="insight-source"><a href="https://ods.od.nih.gov/factsheets/Calcium-Consumer/" target="_blank" rel="noopener">NIH Office of Dietary Supplements · Calcium</a></div></div>
+      <div class="insight-item"><div class="insight-kicker">Flexible, not all-or-nothing</div><div class="insight-body">Build most meals from foods you enjoy and can access. No single food, supplement, or eating pattern is required for every woman; adapt for culture, budget, allergies, medical needs, pregnancy, and menopause.</div></div>
     </div>
   </div>
 </div>
@@ -732,34 +708,6 @@ function addBench(){
   document.getElementById("bRes").value="";
 }
 
-
-function initNutriToday(){
-  const dow=new Date().getDay();
-  const el=document.getElementById("nutriTodayContent");
-  if(!el){return;}
-  if(dow===0){
-    // Sunday — rest day
-    el.innerHTML=
-      "<div class='rec'><div class='ri rg'>☕</div><div><div class='rtl'>Rest day — eat when hungry</div><div class='rbd'>No pre-workout meal needed. Enjoy a relaxed breakfast — eggs, avocado toast, or your usual hash. Coffee first is fine.</div></div></div>"+
-      "<div class='rec'><div class='ri rs'>🥣</div><div><div class='rtl'>Meal prep focus</div><div class='rbd'>Today is your prep window. Double-batch kale soup, hard-boil eggs, make Thai peanut sauce. One task, not all three.</div></div></div>"+
-      "<div class='rec'><div class='ri rt'>🍫</div><div><div class='rtl'>Dessert planned</div><div class='rbd'>Clio bar or chocolate-covered pistachios. Built in. Enjoy it.</div></div></div>";
-  } else if(dow===6){
-    // Saturday — coffee + 10am gym
-    el.innerHTML=
-      "<div class='rec'><div class='ri rg'>☕</div><div><div class='rtl'>Morning (before coffee + gym)</div><div class='rbd'>Have coffee first — that's the ritual. Small snack if hungry: Greek yogurt bar or a couple eggs. Light before the 10am session.</div></div></div>"+
-      "<div class='rec'><div class='ri rs'>🐟</div><div><div class='rtl'>Post-gym (after 11am)</div><div class='rbd'>This is your real post-workout window. Sardines + cottage cheese bowl, or egg hash with avocado. Target 35g+ protein.</div></div></div>"+
-      "<div class='rec'><div class='ri rg'>🥣</div><div><div class='rtl'>Afternoon — prep while you have energy</div><div class='rbd'>Saturday afternoon post-gym is your best brain time. One prep task: soup batch OR sauce jar OR hard-boil eggs.</div></div></div>"+
-      "<div class='rec'><div class='ri rt'>🍫</div><div><div class='rtl'>Dessert planned</div><div class='rbd'>Clio bar or chocolate-covered pistachios tonight. Built in.</div></div></div>";
-  } else {
-    // Monday–Friday — 5am workout days
-    const isGym=(dow>=1&&dow<=5);
-    el.innerHTML=
-      "<div class='rec'><div class='ri rg'>🍳</div><div><div class='rtl'>Pre-workout (4:30am)</div><div class='rbd'>2 eggs on avocado toast or small potato hash. Fast protein, easy digestion before 5am.</div></div></div>"+
-      "<div class='rec'><div class='ri rs'>🐟</div><div><div class='rtl'>Post-workout (within 45 min)</div><div class='rbd'>Sardines + cottage cheese bowl, or Clio bar + fruit. Target 30g+ protein while the window is open.</div></div></div>"+
-      "<div class='rec'><div class='ri rg'>🕐</div><div><div class='rtl'>Lunch — don't skip</div><div class='rbd'>Quick lunch keeps ADHD focus and blood sugar steady. Egg hash bowl, ramen + peanut sauce, or sardines + crackers. 25–35g protein.</div></div></div>"+
-      "<div class='rec'><div class='ri rt'>🍫</div><div><div class='rtl'>Chocolate craving — planned for</div><div class='rbd'>Clio bar or choc-covered pistachios after dinner. Built in. Enjoy it.</div></div></div>";
-  }
-}
 
 const MOVEMENT_GROUPS=[
   {name:"Arms",items:[
