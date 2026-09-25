@@ -291,19 +291,19 @@ function checkPw(){
     </div>
   </header>
   <nav class="nav">
-    <button class="ntab active" onclick="showPage('events',this)">Competition</button>
-    <button class="ntab" onclick="showPage('science',this)">Science Corner</button>
-    <button class="ntab" onclick="showPage('today',this)">Today</button>
+    <button class="ntab active" onclick="showPage('today',this)">Today</button>
     <button class="ntab" onclick="showPage('builder',this)">Workout Builder</button>
-    <button class="ntab" onclick="showPage('body',this)">Body Composition</button>
-    <button class="ntab" onclick="showPage('bench',this)">Benchmarks</button>
+    <button class="ntab" onclick="showPage('events',this)">Competition</button>
     <button class="ntab" onclick="showPage('nutri',this)">Nutrition</button>
     <button class="ntab" onclick="showPage('recovery',this)">Recovery</button>
+    <button class="ntab" onclick="showPage('science',this)">Science Corner</button>
+    <button class="ntab" onclick="showPage('body',this)">Body Composition</button>
+    <button class="ntab" onclick="showPage('bench',this)">Benchmarks</button>
   </nav>
 </div>
 
 <!-- TODAY -->
-<div class="page" id="page-today">
+<div class="page active" id="page-today">
   <div class="pt">Today</div>
   <div class="ps2" id="todayDateLine">Training day</div>
   <div class="wo-cap">40-minute time cap · 3 phases</div>
@@ -812,7 +812,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 </script>
 
 <!-- COMPETITION TAB -->
-<div class="page active" id="page-events">
+<div class="page" id="page-events">
   <div class="pt">Cinco de Mayo Throwdown</div>
   <div class="ps2">May 2nd · Scaled Division · 3-woman team · San Antonio</div>
 
